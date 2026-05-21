@@ -1,0 +1,58 @@
+    <div class="tool" id="lazyatc-helper">
+        <div class="window window-tool">
+            <div class="title">
+                LazyATC Helper &#9432;
+            </div>
+            <div class="content">
+                <div class="line">
+                    <input type="radio" id="lazyatc-mode-route" name="lazyatc-mode" value="Invalid Route" onchange="lazyAtcUpdateMode();" checked />
+                    Invalid Route
+                    <b class="button-spacer">&nbsp;</b>
+                    <input type="radio" id="lazyatc-mode-altitude" name="lazyatc-mode" value="Non-Standard Altitude" onchange="lazyAtcUpdateMode();" />
+                    Non-Standard Altitude
+                </div>
+            </div>
+
+            <div class="content" id="lazyatc-route-section">
+                <div class="line">
+                    Departure Airport<b class="button-spacer">&nbsp;</b><input id="lazyatc-dept" placeholder="e.g. YSSY" type="text" />
+                </div>
+                <div class="line">
+                    Destination Airport<b class="button-spacer">&nbsp;</b><input id="lazyatc-dest" placeholder="e.g. YMML" type="text" />
+                </div>
+                <div class="line">
+                    <input type="button" value="Get Routes" onclick="lazyAtcFetchRoutes();" />
+                </div>
+                <div class="line">
+                    <label for="lazyatc-route-list">Available Routes</label>
+                </div>
+                <div class="line">
+                    <select id="lazyatc-route-list" size="5" style="width: 100%;"></select>
+                </div>
+                <div class="line">
+                    Override Route<b class="button-spacer">&nbsp;</b><input id="lazyatc-override" placeholder="Optional custom route" type="text" />
+                </div>
+            </div>
+
+            <div class="content" id="lazyatc-altitude-section">
+                <div class="line">
+                    Filed Flight Level<b class="button-spacer">&nbsp;</b><input id="lazyatc-filed-fl" placeholder="e.g. 350" type="text" />
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="line">
+                    <input type="button" value="Generate &amp; Copy Message" onclick="lazyAtcGenerateAndCopy();" />
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="line">
+                    Message
+                </div>
+                <div class="line">
+                    <div class="output" id="lazyatc-output" style="min-height: 4em; width: 100%;">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </div>
