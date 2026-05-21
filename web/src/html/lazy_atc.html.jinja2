@@ -9,6 +9,7 @@
                 <select id="lazyatc-mode" onchange="lazyAtcUpdateMode()">
                     <option value="invalid_route">Invalid Route</option>
                     <option value="non_standard_altitude">Non-Standard Altitude</option>
+                    <option value="validate_route">Validate Route</option>
                 </select>
             </div>
         </div>
@@ -33,6 +34,9 @@
                 Override Route<b class="spacer">&nbsp;</b>
                 <input id="lazyatc-override" placeholder="Optional custom route" type="text" />
             </div>
+            <div class="line">
+                <input type="button" value="Generate &amp; Copy Message" onclick="lazyAtcGenerate();" />
+            </div>
         </div>
 
         <div id="lazyatc-altitude-section" class="content" style="display:none;">
@@ -40,17 +44,32 @@
                 Filed Flight Level<b class="spacer">&nbsp;</b>
                 <input id="lazyatc-filed-fl" placeholder="e.g. 350" type="number" />
             </div>
-        </div>
-
-        <div class="content">
             <div class="line">
                 <input type="button" value="Generate &amp; Copy Message" onclick="lazyAtcGenerate();" />
             </div>
         </div>
 
+        <div id="lazyatc-validate-section" class="content" style="display:none;">
+            <div class="line">
+                Departure<b class="spacer">&nbsp;</b>
+                <input id="lazyatc-val-dept" placeholder="e.g. YSSY" type="text" maxlength="4" />
+            </div>
+            <div class="line">
+                Destination<b class="spacer">&nbsp;</b>
+                <input id="lazyatc-val-dest" placeholder="e.g. YMML" type="text" maxlength="4" />
+            </div>
+            <div class="line">
+                Pilot's Route<b class="spacer">&nbsp;</b>
+                <input id="lazyatc-val-route" placeholder="e.g. WOL DCT RAZZI H44 TESAT" type="text" />
+            </div>
+            <div class="line">
+                <input type="button" value="Check Route" onclick="lazyAtcValidateRoute();" />
+            </div>
+        </div>
+
         <div class="content">
             <div class="line">
-                Message
+                Result
             </div>
             <div class="line">
                 <div class="output" id="lazyatc-output">&nbsp;</div>
