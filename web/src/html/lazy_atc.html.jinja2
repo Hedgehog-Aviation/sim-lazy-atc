@@ -1,0 +1,60 @@
+<div class="tool" id="lazy-atc">
+    <div class="window window-tool">
+        <div class="title">
+            LazyATC &#9432;
+        </div>
+        <div class="content">
+            <div class="line">
+                Mode<b class="spacer">&nbsp;</b>
+                <select id="lazyatc-mode" onchange="lazyAtcUpdateMode()">
+                    <option value="invalid_route">Invalid Route</option>
+                    <option value="non_standard_altitude">Non-Standard Altitude</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="lazyatc-route-section" class="content">
+            <div class="line">
+                Departure<b class="spacer">&nbsp;</b>
+                <input id="lazyatc-dept" placeholder="e.g. YSSY" type="text" />
+            </div>
+            <div class="line">
+                Destination<b class="spacer">&nbsp;</b>
+                <input id="lazyatc-dest" placeholder="e.g. YMML" type="text" />
+            </div>
+            <div class="line">
+                <input type="button" value="Get Routes" onclick="lazyAtcFetchRoutes();" />
+            </div>
+            <div class="line">
+                Available Routes<b class="spacer">&nbsp;</b>
+                <select id="lazyatc-route-list" size="5" style="height: auto;"></select>
+            </div>
+            <div class="line">
+                Override Route<b class="spacer">&nbsp;</b>
+                <input id="lazyatc-override" placeholder="Optional custom route" type="text" />
+            </div>
+        </div>
+
+        <div id="lazyatc-altitude-section" class="content" style="display:none;">
+            <div class="line">
+                Filed Flight Level<b class="spacer">&nbsp;</b>
+                <input id="lazyatc-filed-fl" placeholder="e.g. 350" type="number" />
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="line">
+                <input type="button" value="Generate &amp; Copy Message" onclick="lazyAtcGenerate();" />
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="line">
+                Message
+            </div>
+            <div class="line">
+                <div class="output" id="lazyatc-output">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+</div>
