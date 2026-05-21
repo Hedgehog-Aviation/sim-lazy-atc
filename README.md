@@ -1,3 +1,6 @@
+<details> 
+<summary> README of original repository </summary>
+
 # sim-atc.com
 
 This is the repository for the website located at [sim-atc.com](https://sim-atc.com).
@@ -41,3 +44,4 @@ as license these are generated from wikipedia.
 The favicon files (under `web/assets` are NOT licensed for redistribution and if you copy the repository, they must be deleted.
 
 All other files are licensed under the GNU General Public License v3.0.
+</details>
